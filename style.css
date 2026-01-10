@@ -259,9 +259,14 @@ nav {
 
 .hero-desc {
     font-size: 1.125rem;
+    line-height: 1.8;
+    /* Increased for better readability */
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
-    max-width: 550px;
-    /* Slightly wider */
+    max-width: 700px;
+    /* Controlled width for reading comfort */
+    text-wrap: balance;
+    /* Balances lines for better aesthetics */
 }
 
 .cta-group {
