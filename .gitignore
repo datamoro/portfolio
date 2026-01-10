@@ -1,0 +1,9 @@
+# User documents
+About me PTBR.pdf
+Minha trajetória profissional V2.pdf
+
+# System/IDE
+.venv
+.vscode
+__pycache__
+*.pyc

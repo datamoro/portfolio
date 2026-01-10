@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Health Exploratory Analysis | Caiom</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><span class="code-text">&lt;</span>datamoro<span
+                            class="code-text">/&gt;</span></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <a href="projects.html" class="back-link"><ion-icon name="arrow-back-outline"></ion-icon> Back to
+                    Projects</a>
+                <h1 class="page-title animate-fade-in">Public Health Exploratory Analysis</h1>
+                <div class="project-impact-large animate-fade-in delay-1">Analysis of 458k+ Records</div>
+            </div>
+        </section>
+
+        <section class="container project-detail-content animate-fade-in delay-2">
+
+            <div class="project-detail-grid">
+                <div class="detail-main">
+                    <h2>Context & Motivation</h2>
+                    <p>I’ve always believed that data becomes meaningful only when it helps us understand people and the
+                        systems that shape their realities. As part of my portfolio development, I decided to analyze
+                        the 2024 Behavioral Risk Factor Surveillance System (BRFSS) with a specific focus on inequality
+                        in access to care and chronic disease burden across the United States.</p>
+                    <p>My objective was to take a nationally representative dataset and translate it into a coherent
+                        story about how socioeconomic conditions impact health, bringing together data engineering,
+                        statistical reasoning, and public health sensibility.</p>
+
+                    <h2>Key Findings</h2>
+
+                    <h3>Access & Barriers to Care</h3>
+                    <p>When breaking the data down by income, a clear gradient emerges: lower-income adults are
+                        significantly more likely to delay care due to cost, have more physically and mentally unhealthy
+                        days, and are less likely to receive routine checkups.</p>
+                    <p>The geographic patterns reinforce this: states with persistent poverty tend to show higher
+                        cost-related barriers, highlighting how policy environments and structural conditions shape
+                        everyday health decisions.</p>
+
+                    <h3>Chronic Disease Inequality</h3>
+                    <p>I found substantial variation across sex, education, and employment status. Adults who are
+                        “unable to work” display some of the highest burdens across multiple chronic conditions,
+                        particularly depression and COPD.</p>
+                    <p>When aggregating nine chronic conditions, nearly one in three adults presents two or more
+                        comorbidities, and this burden concentrates among those with fewer socioeconomic advantages.</p>
+
+                    <h3>Reflection</h3>
+                    <p>This project reflects the direction I want to grow in: combining technical skills with a deeper
+                        understanding of how social position shapes health outcomes.</p>
+
+                    <div class="project-gallery">
+                        <h3>Project Gallery & Code</h3>
+                        <div class="gallery-grid">
+                            <figure>
+                                <img src="images/ph_access.png" alt="Access Barriers to Care Dashboard">
+                                <figcaption>Access & Barriers to Care Analysis</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/ph_chronic_1.png" alt="Chronic Disease Inequality Dashboard">
+                                <figcaption>Chronic Disease Burden by Education Level</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="images/ph_chronic_2.png" alt="Mental Health & Employment Analysis">
+                                <figcaption>Mental Health Burden Among 'Unable to Work' Adults</figcaption>
+                            </figure>
+                        </div>
+                        <div class="gallery-placeholder" style="margin-top: 1rem;">
+                            <p>Code repository available upon request.</p>
+                            <!-- <a href="#" class="btn btn-outline btn-sm"><ion-icon name="logo-github"></ion-icon> View on GitHub</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-sidebar">
+                    <div class="tech-stack-box">
+                        <h3>Technologies</h3>
+                        <div class="project-tags">
+                            <span class="tag">Apache Superset</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Public Health</span>
+                            <span class="tag">Statistics</span>
+                            <span class="tag">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Caiom. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
