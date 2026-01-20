@@ -7,3 +7,7 @@ Minha trajetória profissional V2.pdf
 .vscode
 __pycache__
 *.pyc
+
+# Projects
+portfolio_opsflow/
+imile_data/

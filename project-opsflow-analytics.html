@@ -69,28 +69,7 @@
                             not hidden in proprietary tool configurations.</li>
                     </ul>
 
-                    <div class="mermaid"
-                        style="margin: 2rem 0; background: rgba(30, 41, 59, 0.5); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
-                        graph LR
-                        subgraph Raw_Data [Raw Data]
-                        A[BigQuery Raw Tables]
-                        end
-                        subgraph dbt_Transformation [dbt Transformation]
-                        direction LR
-                        B(Staging Views) --> C(Intermediate Logic)
-                        C --> D[Marts / Gold Tables]
-                        end
-                        subgraph BI [Consumption]
-                        D --> E((Metabase / Superset))
-                        end
-                        A --> B
 
-                        style A fill:#0f172a,stroke:#334155,color:#f8fafc
-                        style B fill:#1e293b,stroke:#06b6d4,color:#f8fafc
-                        style C fill:#1e293b,stroke:#06b6d4,color:#f8fafc
-                        style D fill:#06b6d4,stroke:#fff,color:#0f172a,stroke-width:2px
-                        style E fill:#f8fafc,stroke:#333,color:#0f172a
-                    </div>
 
                     <h2>Data Modeling Strategy</h2>
                     <p>I implemented a layered "Medallion" architecture to ensure data quality and reusability:</p>
