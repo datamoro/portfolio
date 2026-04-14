@@ -967,11 +967,13 @@ footer {
     background: rgba(15, 23, 42, 0.95);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* changed for scrolling */
     z-index: 2000;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-fast);
+    overflow: auto; /* allow scrolling */
+    padding: 2rem; /* some padding when zoomed */
 }
 
 .lightbox.active {
@@ -980,27 +982,37 @@ footer {
 }
 
 .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw;
+    max-height: 90vh; /* changed from % to viewport relative */
     border-radius: 8px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     border: 2px solid var(--accent-primary);
     transform: scale(0.9);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), max-width var(--transition-fast), max-height var(--transition-fast);
+    margin: auto; /* vertically centers with align-items:flex-start if enough space */
+    cursor: zoom-in; /* indicating zoomability */
+    object-fit: contain; /* ensures image fits properly */
 }
 
 .lightbox.active img {
     transform: scale(1);
 }
 
+.lightbox.active img.zoomed {
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
+}
+
 .lightbox-close {
-    position: absolute;
+    position: fixed; /* fixed so it doesn't scroll away */
     top: 20px;
     right: 30px;
     font-size: 3rem;
     color: var(--text-primary);
     cursor: pointer;
     transition: color var(--transition-fast);
+    z-index: 2010;
 }
 
 .lightbox-close:hover {

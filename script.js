@@ -26,8 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryImages.forEach(img => {
             img.addEventListener('click', e => {
                 lightboxImg.src = e.target.src;
+                lightboxImg.classList.remove('zoomed'); // reset zoom
                 lightbox.classList.add('active');
             });
+        });
+
+        // Zoom toggle on image click
+        lightboxImg.addEventListener('click', e => {
+            e.stopPropagation(); // prevent closing
+            lightboxImg.classList.toggle('zoomed');
         });
 
         // Close Lightbox (click outside or on close button)
