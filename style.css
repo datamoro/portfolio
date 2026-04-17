@@ -561,7 +561,7 @@ nav {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links {
+    .nav-links, .profile-pic-container {
         display: none;
     }
 
@@ -571,6 +571,10 @@ nav {
 
     h1 {
         font-size: 3rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero-actions {
