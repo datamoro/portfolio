@@ -19,11 +19,16 @@
         <nav>
             <a href="#home" class="logo">&lt;datamoro/&gt;</a>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="active" data-i18n="nav-home">Home</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#experience" data-i18n="nav-experience">Experience</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+                <li class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="pt">PT</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -41,21 +46,21 @@
                             <span id="typed-text"></span><span class="cursor"></span>
                         </div>
 
-                        <p class="hero-description">
+                        <p class="hero-description" data-i18n="hero-bio">
                             I bridge the gap between technical complexity and business clarity with 7+ years of
                             senior-level expertise.
                             Focused on <strong>Azure/OCI</strong>, <strong>PySpark</strong>, <strong>PostgreSQL</strong>
                             and <strong>Airflow</strong>.
                         </p>
                         <div class="hero-actions">
-                            <a href="#projects" class="btn btn-primary">See My Work</a>
+                            <a href="#projects" class="btn btn-primary" data-i18n="btn-work">See My Work</a>
                             <a href="caio-moro-data-engineer-mar26 (1) (1).pdf" class="btn btn-primary"
-                                target="_blank">Download Resume</a>
-                            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                                target="_blank" data-i18n="btn-resume">Download Resume</a>
+                            <a href="#contact" class="btn btn-primary" data-i18n="btn-connect">Let's Connect</a>
                         </div>
                     </div>
                     <div class="profile-pic-container">
-                        <img src="profilepic.jpg" alt="Caio Moro" class="profile-pic">
+                        <img src="profilepic.jpg" alt="Caio Moro" class="profile-pic" data-i18n-alt="profile-alt">
                     </div>
                 </div>
             </div>
@@ -64,42 +69,42 @@
         <!-- Projects Section -->
         <section id="projects">
             <div class="container text-center">
-                <h2>Selected Projects</h2>
+                <h2 data-i18n="projects-title">Selected Projects</h2>
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card" data-project="opsflow">
                         <div class="project-img-placeholder"><ion-icon name="cube-outline"></ion-icon></div>
                         <div class="project-body">
-                            <span class="project-tag">Modern Data Stack</span>
-                            <h3>OpsFlow Analytics</h3>
-                            <p>Scalable demand forecasting engine built with BigQuery and dbt.</p>
+                            <span class="project-tag" data-i18n="proj-1-tag">Modern Data Stack</span>
+                            <h3 data-i18n="proj-1-title">OpsFlow Analytics</h3>
+                            <p data-i18n="proj-1-desc">Scalable demand forecasting engine built with BigQuery and dbt.</p>
                         </div>
                     </div>
                     <!-- Project 2 -->
                     <div class="project-card" data-project="migration">
                         <div class="project-img-placeholder"><ion-icon name="cloud-upload-outline"></ion-icon></div>
                         <div class="project-body">
-                            <span class="project-tag">93% Latency Reduction</span>
-                            <h3>Cloud Data Lake Migration</h3>
-                            <p>Legacy migration (Oracle/PostgreSQL) to OCI Medallion Architecture.</p>
+                            <span class="project-tag" data-i18n="proj-2-tag">93% Latency Reduction</span>
+                            <h3 data-i18n="proj-2-title">Cloud Data Lake Migration</h3>
+                            <p data-i18n="proj-2-desc">Legacy migration (Oracle/PostgreSQL) to OCI Medallion Architecture.</p>
                         </div>
                     </div>
                     <!-- Project 3 -->
                     <div class="project-card" data-project="incentive">
                         <div class="project-img-placeholder"><ion-icon name="trophy-outline"></ion-icon></div>
                         <div class="project-body">
-                            <span class="project-tag">USD 2.8M Managed</span>
-                            <h3>National Incentive Program</h3>
-                            <p>Automated calculation for 400+ franchises using SQL and Python.</p>
+                            <span class="project-tag" data-i18n="proj-3-tag">USD 2.8M Managed</span>
+                            <h3 data-i18n="proj-3-title">National Incentive Program</h3>
+                            <p data-i18n="proj-3-desc">Automated calculation for 400+ franchises using SQL and Python.</p>
                         </div>
                     </div>
                     <!-- Project 4 -->
                     <div class="project-card" data-project="public-health">
                         <div class="project-img-placeholder"><ion-icon name="heart-circle-outline"></ion-icon></div>
                         <div class="project-body">
-                            <span class="project-tag">458k+ Records</span>
-                            <h3>Public Health Analysis</h3>
-                            <p>Exploratory analysis of BRFSS dataset using PostgreSQL, Apache Superset and Docker.</p>
+                            <span class="project-tag" data-i18n="proj-4-tag">458k+ Records</span>
+                            <h3 data-i18n="proj-4-title">Public Health Analysis</h3>
+                            <p data-i18n="proj-4-desc">Exploratory analysis of BRFSS dataset using PostgreSQL, Apache Superset and Docker.</p>
                         </div>
                     </div>
                 </div>
@@ -109,25 +114,20 @@
         <!-- Experience Section -->
         <section id="experience">
             <div class="container">
-                <h2>Professional Journey</h2>
+                <h2 data-i18n="experience-title">Professional Journey</h2>
                 <div class="timeline">
                     <!-- Item 1: Senior Data Engineer -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <span class="timeline-date">Sep 2024 - Present</span>
                         <div class="timeline-content">
-                            <h3>Senior Data Engineer</h3>
+                            <h3 data-i18n="exp-1-title">Senior Data Engineer</h3>
                             <p><strong>Jadlog (Geopost Group)</strong></p>
-                            <p class="role-focus">Modernizing Legacy Infrastructure & Latency Reduction</p>
-                            <ul>
-                                <li><strong>The Challenge:</strong> Legacy Oracle systems couldn't scale with real-time
-                                    business needs.</li>
-                                <li><strong>The Solution:</strong> Spearheaded a full-scale migration to <strong>OCI
-                                        Data Lake</strong> using <strong>Medallion Architecture</strong>. I
-                                    re-engineered pipelines in <strong>PySpark/Airflow</strong> that optimized data
-                                    flow.</li>
-                                <li><strong>The Impact:</strong> Slashed processing latency by <strong>93%</strong>,
-                                    enabling board-level decisions based on near real-time logistics data.</li>
+                            <p class="role-focus" data-i18n="exp-1-focus">Modernizing Legacy Infrastructure & Latency Reduction</p>
+                            <ul data-i18n="exp-1-bullets">
+                                <li><strong>The Challenge:</strong> Legacy Oracle systems couldn't scale with real-time business needs.</li>
+                                <li><strong>The Solution:</strong> Spearheaded a full-scale migration to <strong>OCI Data Lake</strong> using <strong>Medallion Architecture</strong>. I re-engineered pipelines in <strong>PySpark/Airflow</strong> that optimized data flow.</li>
+                                <li><strong>The Impact:</strong> Slashed processing latency by <strong>93%</strong>, enabling board-level decisions based on near real-time logistics data.</li>
                             </ul>
                         </div>
                     </div>
@@ -137,17 +137,13 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-date">Feb 2022 - Sep 2024</span>
                         <div class="timeline-content">
-                            <h3>Data Analytics Lead</h3>
+                            <h3 data-i18n="exp-2-title">Data Analytics Lead</h3>
                             <p><strong>Jadlog</strong></p>
-                            <p class="role-focus">Executive Alignment & Data Culture</p>
-                            <ul>
-                                <li><strong>The Bridge:</strong> Managed a team of 7, translating C-suite business goals
-                                    into technical roadmaps.</li>
-                                <li><strong>High Stakes:</strong> Engineered the data backbone for a
-                                    <strong>R$14M/year</strong> performance program trusted by 400+ franchise owners.
-                                </li>
-                                <li><strong>Adoption:</strong> Achieved <strong>>95% dashboard adoption</strong>,
-                                    fundamentally shifting the company culture to "data-first."</li>
+                            <p class="role-focus" data-i18n="exp-2-focus">Executive Alignment & Data Culture</p>
+                            <ul data-i18n="exp-2-bullets">
+                                <li><strong>The Bridge:</strong> Managed a team of 7, translating C-suite business goals into technical roadmaps.</li>
+                                <li><strong>High Stakes:</strong> Engineered the data backbone for a <strong>R$14M/year</strong> performance program trusted by 400+ franchise owners.</li>
+                                <li><strong>Adoption:</strong> Achieved <strong>>95% dashboard adoption</strong>, fundamentally shifting the company culture to "data-first."</li>
                             </ul>
                         </div>
                     </div>
@@ -157,14 +153,12 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-date">Jan 2021 - Feb 2022</span>
                         <div class="timeline-content">
-                            <h3>Sr. BI Analyst</h3>
+                            <h3 data-i18n="exp-3-title">Sr. BI Analyst</h3>
                             <p><strong>Jadlog</strong></p>
-                            <p class="role-focus">Technical Excellence & Forecasting</p>
-                            <ul>
-                                <li><strong>Efficiency:</strong> Optimized complex SQL/PL/SQL environments, reducing
-                                    execution times by over <strong>60%</strong> (from 43m to 17m).</li>
-                                <li><strong>Predictive Power:</strong> Developed the forecasting models used for "Peak
-                                    Seasons," ensuring infrastructure robustness under extreme load.</li>
+                            <p class="role-focus" data-i18n="exp-3-focus">Technical Excellence & Forecasting</p>
+                            <ul data-i18n="exp-3-bullets">
+                                <li><strong>Efficiency:</strong> Optimized complex SQL/PL/SQL environments, reducing execution times by over <strong>60%</strong> (from 43m to 17m).</li>
+                                <li><strong>Predictive Power:</strong> Developed the forecasting models used for "Peak Seasons," ensuring infrastructure robustness under extreme load.</li>
                             </ul>
                         </div>
                     </div>
@@ -174,16 +168,13 @@
                         <div class="timeline-dot"></div>
                         <span class="timeline-date">Jun 2018 - Dec 2020</span>
                         <div class="timeline-content">
-                            <h3>Data / BI Analyst</h3>
+                            <h3 data-i18n="exp-4-title">Data / BI Analyst</h3>
                             <p><strong>Jadlog (Geopost Group)</strong></p>
-                            <p class="role-focus">Business Intelligence & Process Automation</p>
-                            <ul>
-                                <li><strong>The Core:</strong> Utilized analytical reasoning to translate operational
-                                    pain points (SLAs, Route Time) into technical KPIs.</li>
-                                <li><strong>Automation:</strong> Restructured the data area by automating manual Excel
-                                    reports into dynamic dashboards, eliminating human errors.</li>
-                                <li><strong>Scalability:</strong> Developed the first complex SQL queries for
-                                    multi-source extraction, establishing the company's Data Warehouse foundation.</li>
+                            <p class="role-focus" data-i18n="exp-4-focus">Business Intelligence & Process Automation</p>
+                            <ul data-i18n="exp-4-bullets">
+                                <li><strong>The Core:</strong> Utilized analytical reasoning to translate operational pain points (SLAs, Route Time) into technical KPIs.</li>
+                                <li><strong>Automation:</strong> Restructured the data area by automating manual Excel reports into dynamic dashboards, eliminating human errors.</li>
+                                <li><strong>Scalability:</strong> Developed the first complex SQL queries for multi-source extraction, establishing the company's Data Warehouse foundation.</li>
                             </ul>
                         </div>
                     </div>
@@ -193,50 +184,40 @@
 
         <section id="skills">
             <div class="container">
-                <h2>Core Expertise</h2>
-                <p class="section-subtitle">Bridging technical complexity with robust, governed, and scalable solutions.
+                <h2 data-i18n="skills-title">Core Expertise</h2>
+                <p class="section-subtitle" data-i18n="skills-subtitle">Bridging technical complexity with robust, governed, and scalable solutions.
                 </p>
 
                 <div class="tech-grid">
                     <div class="tech-card">
                         <ion-icon name="layers-outline"></ion-icon>
-                        <h3>Data Architecture & Scale</h3>
-                        <p>Building high-performance environments using <strong>Spark (PySpark)</strong>,
-                            <strong>Airflow</strong>, and <strong>dbt</strong>. Expert in <strong>Medallion
-                                Architecture</strong> and scaling data flows for peak seasons.
-                        </p>
+                        <h3 data-i18n="skill-1-title">Data Architecture & Scale</h3>
+                        <p data-i18n="skill-1-desc">Building high-performance environments using <strong>Spark (PySpark)</strong>,
+                            <strong>Airflow</strong>, and <strong>dbt</strong>. Expert in <strong>Medallion Architecture</strong> and scaling data flows for peak seasons.</p>
                     </div>
 
                     <div class="tech-card">
                         <ion-icon name="shield-checkmark-outline"></ion-icon>
-                        <h3>Data Governance & Quality</h3>
-                        <p>Establishing frameworks for <strong>Data Reliability</strong> and
-                            <strong>Traceability</strong>. Focused on documentation, single source of truth, and data
-                            quality monitoring.</p>
+                        <h3 data-i18n="skill-2-title">Data Governance & Quality</h3>
+                        <p data-i18n="skill-2-desc">Establishing frameworks for <strong>Data Reliability</strong> and <strong>Traceability</strong>. Focused on documentation, single source of truth, and data quality monitoring.</p>
                     </div>
 
                     <div class="tech-card">
                         <ion-icon name="analytics-outline"></ion-icon>
-                        <h3>Strategic Analytics</h3>
-                        <p>Translating business needs into <strong>Star Schema</strong> models. Proficient in delivering
-                            governed data products via <strong>Power BI</strong>, <strong>Apache Superset</strong>, and
-                            <strong>Looker</strong>.</p>
+                        <h3 data-i18n="skill-3-title">Strategic Analytics</h3>
+                        <p data-i18n="skill-3-desc">Translating business needs into <strong>Star Schema</strong> models. Proficient in delivering governed data products via <strong>Power BI</strong>, <strong>Apache Superset</strong>, and <strong>Looker</strong>.</p>
                     </div>
 
                     <div class="tech-card">
                         <ion-icon name="cloud-done-outline"></ion-icon>
-                        <h3>Cloud Platforms</h3>
-                        <p>Specialized in <strong>Azure</strong> and <strong>OCI</strong> migrations. Experience
-                            managing data environments in <strong>Snowflake</strong>, <strong>Databricks</strong>, and
-                            <strong>AWS Glue/EMR</strong>.</p>
+                        <h3 data-i18n="skill-4-title">Cloud Platforms</h3>
+                        <p data-i18n="skill-4-desc">Specialized in <strong>Azure</strong> and <strong>OCI</strong> migrations. Experience managing data environments in <strong>Snowflake</strong>, <strong>Databricks</strong>, and <strong>AWS Glue/EMR</strong>.</p>
                     </div>
 
                     <div class="tech-card">
                         <ion-icon name="hardware-chip-outline"></ion-icon>
-                        <h3>Innovation & Generative AI</h3>
-                        <p>Pioneering <strong>Agentic MVPs</strong> and testing frontier <strong>LLMs</strong>. Leading
-                            the cross-departmental <strong>AI adoption</strong> to foster a culture of technological
-                            innovation.</p>
+                        <h3 data-i18n="skill-5-title">Innovation & Generative AI</h3>
+                        <p data-i18n="skill-5-desc">Pioneering <strong>Agentic MVPs</strong> and testing frontier <strong>LLMs</strong>. Leading the cross-departmental <strong>AI adoption</strong> to foster a culture of technological innovation.</p>
                     </div>
                 </div>
             </div>
@@ -245,26 +226,26 @@
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <h2 class="text-center">Let's Connect</h2>
+                <h2 class="text-center" data-i18n="contact-title">Let's Connect</h2>
                 <div class="contact-grid">
                     <a href="https://linkedin.com/in/caiomoro" target="_blank" class="contact-card">
                         <ion-icon name="logo-linkedin"></ion-icon>
                         <div>
-                            <p style="font-size: 0.8rem; color: #666; margin: 0;">LinkedIn</p>
+                            <p style="font-size: 0.8rem; color: #666; margin: 0;" data-i18n="contact-label-linkedin">LinkedIn</p>
                             <span>in/caiomoro</span>
                         </div>
                     </a>
                     <a href="https://github.com/datamoro" target="_blank" class="contact-card">
                         <ion-icon name="logo-github"></ion-icon>
                         <div>
-                            <p style="font-size: 0.8rem; color: #666; margin: 0;">GitHub</p>
+                            <p style="font-size: 0.8rem; color: #666; margin: 0;" data-i18n="contact-label-github">GitHub</p>
                             <span>@datamoro</span>
                         </div>
                     </a>
                     <a href="mailto:caio.moro@outlook.com" class="contact-card">
                         <ion-icon name="mail-outline"></ion-icon>
                         <div>
-                            <p style="font-size: 0.8rem; color: #666; margin: 0;">Email</p>
+                            <p style="font-size: 0.8rem; color: #666; margin: 0;" data-i18n="contact-label-email">Email</p>
                             <span>caio.moro@outlook.com</span>
                         </div>
                     </a>

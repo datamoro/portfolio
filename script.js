@@ -1,11 +1,200 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Localization Logic ---
+    const translations = {
+        'en': {
+            'nav-home': 'Home',
+            'nav-projects': 'Projects',
+            'nav-experience': 'Experience',
+            'nav-skills': 'Skills',
+            'nav-contact': 'Contact',
+            'hero-bio': 'I bridge the gap between technical complexity and business clarity with 7+ years of senior-level expertise. Focused on <strong>Azure/OCI</strong>, <strong>PySpark</strong>, <strong>PostgreSQL</strong> and <strong>Airflow</strong>.',
+            'btn-work': 'See My Work',
+            'btn-resume': 'Download Resume',
+            'btn-connect': "Let's Connect",
+            'projects-title': 'Selected Projects',
+            'proj-1-tag': 'Modern Data Stack',
+            'proj-1-title': 'OpsFlow Analytics',
+            'proj-1-desc': 'Scalable demand forecasting engine built with BigQuery and dbt.',
+            'proj-2-tag': '93% Latency Reduction',
+            'proj-2-title': 'Cloud Data Lake Migration',
+            'proj-2-desc': 'Legacy migration (Oracle/PostgreSQL) to OCI Medallion Architecture.',
+            'proj-3-tag': 'USD 2.8M Managed',
+            'proj-3-title': 'National Incentive Program',
+            'proj-3-desc': 'Automated calculation for 400+ franchises using SQL and Python.',
+            'proj-4-tag': '458k+ Records',
+            'proj-4-title': 'Public Health Analysis',
+            'proj-4-desc': 'Exploratory analysis of BRFSS dataset using PostgreSQL, Apache Superset and Docker.',
+            'experience-title': 'Professional Journey',
+            'exp-1-title': 'Senior Data Engineer',
+            'exp-1-focus': 'Modernizing Legacy Infrastructure & Latency Reduction',
+            'exp-1-bullets': `
+                <li><strong>The Challenge:</strong> Legacy Oracle systems couldn't scale with real-time business needs.</li>
+                <li><strong>The Solution:</strong> Spearheaded a full-scale migration to <strong>OCI Data Lake</strong> using <strong>Medallion Architecture</strong>. I re-engineered pipelines in <strong>PySpark/Airflow</strong> that optimized data flow.</li>
+                <li><strong>The Impact:</strong> Slashed processing latency by <strong>93%</strong>, enabling board-level decisions based on near real-time logistics data.</li>
+            `,
+            'exp-2-title': 'Data Analytics Lead',
+            'exp-2-focus': 'Executive Alignment & Data Culture',
+            'exp-2-bullets': `
+                <li><strong>The Bridge:</strong> Managed a team of 7, translating C-suite business goals into technical roadmaps.</li>
+                <li><strong>High Stakes:</strong> Engineered the data backbone for a <strong>R$14M/year</strong> performance program trusted by 400+ franchise owners.</li>
+                <li><strong>Adoption:</strong> Achieved <strong>>95% dashboard adoption</strong>, fundamentally shifting the company culture to "data-first."</li>
+            `,
+            'exp-3-title': 'Sr. BI Analyst',
+            'exp-3-focus': 'Technical Excellence & Forecasting',
+            'exp-3-bullets': `
+                <li><strong>Efficiency:</strong> Optimized complex SQL/PL/SQL environments, reducing execution times by over <strong>60%</strong> (from 43m to 17m).</li>
+                <li><strong>Predictive Power:</strong> Developed the forecasting models used for "Peak Seasons," ensuring infrastructure robustness under extreme load.</li>
+            `,
+            'exp-4-title': 'Data / BI Analyst',
+            'exp-4-focus': 'Business Intelligence & Process Automation',
+            'exp-4-bullets': `
+                <li><strong>The Core:</strong> Utilized analytical reasoning to translate operational pain points (SLAs, Route Time) into technical KPIs.</li>
+                <li><strong>Automation:</strong> Restructured the data area by automating manual Excel reports into dynamic dashboards, eliminating human errors.</li>
+                <li><strong>Scalability:</strong> Developed the first complex SQL queries for multi-source extraction, establishing the company's Data Warehouse foundation.</li>
+            `,
+            'skills-title': 'Core Expertise',
+            'skills-subtitle': 'Bridging technical complexity with robust, governed, and scalable solutions.',
+            'skill-1-title': 'Data Architecture & Scale',
+            'skill-1-desc': 'Building high-performance environments using <strong>Spark (PySpark)</strong>, <strong>Airflow</strong>, and <strong>dbt</strong>. Expert in <strong>Medallion Architecture</strong> and scaling data flows.',
+            'skill-2-title': 'Data Governance & Quality',
+            'skill-2-desc': 'Establishing frameworks for <strong>Data Reliability</strong> and <strong>Traceability</strong>. Focused on documentation, single source of truth, and data quality monitoring.',
+            'skill-3-title': 'Strategic Analytics',
+            'skill-3-desc': 'Translating business needs into <strong>Star Schema</strong> models. Proficient in delivering governed data products via <strong>Power BI</strong>, <strong>Apache Superset</strong>, and <strong>Looker</strong>.',
+            'skill-4-title': 'Cloud Platforms',
+            'skill-4-desc': 'Specialized in <strong>Azure</strong> and <strong>OCI</strong> migrations. Experience managing data environments in <strong>Snowflake</strong>, <strong>Databricks</strong>, and <strong>AWS Glue/EMR</strong>.',
+            'skill-5-title': 'Innovation & Generative AI',
+            'skill-5-desc': 'Pioneering <strong>Agentic MVPs</strong> and testing frontier <strong>LLMs</strong>. Leading the cross-departmental <strong>AI adoption</strong> to foster a culture of technological innovation.',
+            'contact-title': "Let's Connect",
+            'contact-label-linkedin': 'LinkedIn',
+            'contact-label-github': 'GitHub',
+            'contact-label-email': 'Email',
+            'profile-alt': 'Caio Moro - Data Engineer',
+            'page-title': 'Caio Moro | Data & Analytics Engineer',
+            // Typewriter phrases
+            'typewriter': [
+                "Architecting modern data environments.",
+                "Solving operational complexity with data.",
+                "Building scalable pipelines in Azure & OCI.",
+                "Transforming raw data into strategic impact."
+            ]
+        },
+        'pt': {
+            'nav-home': 'Início',
+            'nav-projects': 'Projetos',
+            'nav-experience': 'Carreira',
+            'nav-skills': 'Habilidades',
+            'nav-contact': 'Contato',
+            'hero-bio': 'Conecto complexidade técnica à clareza de negócios com mais de 7 anos de experiência sênior. Especialista em <strong>Azure/OCI</strong>, <strong>PySpark</strong>, <strong>PostgreSQL</strong> e <strong>Airflow</strong>.',
+            'btn-work': 'Ver Projetos',
+            'btn-resume': 'Baixar Currículo',
+            'btn-connect': 'Vamos Conversar',
+            'projects-title': 'Projetos Desenvolvidos',
+            'proj-1-tag': 'Modern Data Stack',
+            'proj-1-title': 'OpsFlow Analytics',
+            'proj-1-desc': 'Motor de previsão de demanda escalável com BigQuery e dbt.',
+            'proj-2-tag': '93% Redução de Latência',
+            'proj-2-title': 'Migração para Cloud Data Lake',
+            'proj-2-desc': 'Migração de sistemas legados (Oracle/PostgreSQL) para OCI.',
+            'proj-3-tag': 'R$ 14M Gerenciados',
+            'proj-3-title': 'Programa Nacional de Incentivos',
+            'proj-3-desc': 'Cálculos automatizados para 400+ franquias usando SQL e Python.',
+            'proj-4-tag': '458k+ Beneficiários',
+            'proj-4-title': 'Análise de Saúde Pública',
+            'proj-4-desc': 'Análise exploratória do dataset BRFSS usando PostgreSQL e Superset.',
+            'experience-title': 'Jornada Profissional',
+            'exp-1-title': 'Engenheiro de Dados Sênior',
+            'exp-1-focus': 'Modernização de Infraestrutura Legada e Redução de Latência',
+            'exp-1-bullets': `
+                <li><strong>O Desafio:</strong> Sistemas Oracle legados não escalavam com as necessidades de tempo real.</li>
+                <li><strong>A Solução:</strong> Liderei a migração total para <strong>OCI Data Lake</strong> usando <strong>Arquitetura Medalhão</strong>. Re-engineerei pipelines em <strong>PySpark/Airflow</strong> que otimizaram o fluxo.</li>
+                <li><strong>O Impacto:</strong> Reduzi a latência de processamento em <strong>93%</strong>, permitindo decisões de diretoria baseadas em dados logísticos quase em tempo real.</li>
+            `,
+            'exp-2-title': 'Líder de Analytics',
+            'exp-2-focus': 'Alinhamento Executivo e Cultura de Dados',
+            'exp-2-bullets': `
+                <li><strong>A Ponte:</strong> Gerenciei um time de 7, traduzindo objetivos da C-suite em roadmaps técnicos.</li>
+                <li><strong>Alto Impacto:</strong> Desenvolvi a base de dados para um programa de desempenho de <strong>R$14M/ano</strong>, utilizado por mais de 400 franqueados.</li>
+                <li><strong>Adoção:</strong> Alcancei <strong>>95% de adoção de dashboards</strong>, mudando fundamentalmente a cultura da empresa para "data-first".</li>
+            `,
+            'exp-3-title': 'Analista de BI Sênior',
+            'exp-3-focus': 'Excelência Técnica e Modelagem Preditiva',
+            'exp-3-bullets': `
+                <li><strong>Eficiência:</strong> Otimizei ambientes SQL/PL/SQL complexos, reduzindo tempos de execução em mais de <strong>60%</strong> (de 43m para 17m).</li>
+                <li><strong>Poder Preditivo:</strong> Desenvolvi modelos de previsão para "Altas Saídas", garantindo robustez da infraestrutura sob carga extrema.</li>
+            `,
+            'exp-4-title': 'Analista de Dados / BI',
+            'exp-4-focus': 'Business Intelligence e Automação de Processos',
+            'exp-4-bullets': `
+                <li><strong>O Core:</strong> Usei raciocínio analítico para traduzir dores operacionais (SLAs, Tempo de Rota) em KPIs técnicos.</li>
+                <li><strong>Automação:</strong> Reestruturei a área de dados automatizando relatórios manuais em Excel para dashboards dinâmicos, eliminando erros humanos.</li>
+                <li><strong>Escalabilidade:</strong> Desenvolvi as primeiras queries complexas para extração multi-source, estabelecendo o DW da empresa.</li>
+            `,
+            'skills-title': 'Principais Competências',
+            'skills-subtitle': 'Unindo complexidade técnica a soluções robustas, governadas e escaláveis.',
+            'skill-1-title': 'Arquitetura de Dados e Escala',
+            'skill-1-desc': 'Construindo ambientes de alta performance com <strong>Spark (PySpark)</strong>, <strong>Airflow</strong> e <strong>dbt</strong>. Especialista em <strong>Arquitetura Medalhão</strong>.',
+            'skill-2-title': 'Governança e Qualidade',
+            'skill-2-desc': 'Estabelecendo frameworks de <strong>Confiabilidade</strong> e <strong>Rastreabilidade</strong>. Foco em documentação e monitoramento de qualidade.',
+            'skill-3-title': 'Analytics Estratégico',
+            'skill-3-desc': 'Traduzindo necessidades de negócio em modelos <strong>Star Schema</strong>. Entrega de produtos de dados via <strong>Power BI</strong> e <strong>Superset</strong>.',
+            'skill-4-title': 'Plataformas de Nuvem',
+            'skill-4-desc': 'Especialista em migrações <strong>Azure</strong> e <strong>OCI</strong>. Experiência em <strong>Snowflake</strong>, <strong>Databricks</strong> e <strong>AWS Glue/EMR</strong>.',
+            'skill-5-title': 'Inovação e IA Generativa',
+            'skill-5-desc': 'Desenvolvendo <strong>MVPs de Agentes</strong> e testando <strong>LLMs</strong> de fronteira. Liderando a adoção de IA para fomentar inovação tecnológica.',
+            'contact-title': 'Vamos nos Conectar',
+            'contact-label-linkedin': 'LinkedIn',
+            'contact-label-github': 'GitHub',
+            'contact-label-email': 'E-mail',
+            'profile-alt': 'Caio Moro - Engenheiro de Dados',
+            'page-title': 'Caio Moro | Engenheiro de Dados & Analytics',
+            // Typewriter phrases
+            'typewriter': [
+                "Arquitetando ambientes de dados modernos.",
+                "Resolvendo complexidade operacional com dados.",
+                "Construindo pipelines escaláveis em Azure e OCI.",
+                "Transformando dados brutos em impacto estratégico."
+            ]
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+
+        // Update Text Content
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update Alt Texts
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+            const key = el.getAttribute('data-i18n-alt');
+            if (translations[lang][key]) {
+                el.setAttribute('alt', translations[lang][key]);
+            }
+        });
+
+        // Update Page Title
+        document.title = translations[lang]['page-title'];
+
+        // Update active class on buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        // Reset typewriter
+        wordIndex = 0;
+        charIndex = 0;
+        isDeleting = false;
+        typedTextElement.textContent = '';
+    }
+
     // --- Typewriter Effect ---
-    const words = [
-        "Architecting modern data environments.",
-        "Solving operational complexity with data.",
-        "Building scalable pipelines in Azure & OCI.",
-        "Transforming raw data into strategic impact."
-    ];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -15,7 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const pauseBetweenWords = 2000;
 
     function type() {
+        const words = translations[currentLang]['typewriter'];
         const currentWord = words[wordIndex];
+        
         if (isDeleting) {
             typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
@@ -40,51 +231,104 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Modal Logic ---
     const projectData = {
         'opsflow': {
-            title: 'OpsFlow Analytics',
-            tag: 'Modern Data Stack',
-            content: `
-                <h3>Context & Motivation</h3>
-                <p>Accurate demand forecasting is the backbone of efficient logistics. This project transforms operational data into actionable forecasting insights using a Modern Data Stack approach.</p>
-                <h3>Architecture</h3>
-                <p>Built with <strong>Google BigQuery</strong> and <strong>dbt</strong>, leveraging a Medallion Architecture (Bronze, Silver, Gold layers) to ensure data quality and scalability.</p>
-                <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                    <p><strong>Impact:</strong> Migrated legacy Python engine to ELT, improving maintainability and version control.</p>
-                </div>
-                <a href="https://github.com/datamoro/opsflow-analytics" target="_blank" class="btn btn-outline" style="width: 100%;">View Code on GitHub</a>
-            `
+            en: {
+                title: 'OpsFlow Analytics',
+                tag: 'Modern Data Stack',
+                content: `
+                    <h3>Context & Motivation</h3>
+                    <p>Accurate demand forecasting is the backbone of efficient logistics. This project transforms operational data into actionable forecasting insights.</p>
+                    <h3>Architecture</h3>
+                    <p>Built with <strong>Google BigQuery</strong> and <strong>dbt</strong>, leveraging a Medallion Architecture layer model.</p>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Impact:</strong> Migrated legacy engine to ELT, improving maintainability.</p>
+                    </div>
+                `
+            },
+            pt: {
+                title: 'OpsFlow Analytics',
+                tag: 'Modern Data Stack',
+                content: `
+                    <h3>Contexto e Motivação</h3>
+                    <p>Previsão de demanda precisa é a base da eficiência logística. Este projeto transforma dados operacionais em insights acionáveis.</p>
+                    <h3>Arquitetura</h3>
+                    <p>Construído com <strong>BigQuery</strong> e <strong>dbt</strong>, utilizando o modelo de Arquitetura Medalhão.</p>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Impacto:</strong> Migração de motor legado para ELT, melhorando manutenibilidade.</p>
+                    </div>
+                `
+            }
         },
         'migration': {
-            title: 'Cloud Data Lake Migration',
-            tag: '93% Latency Reduction',
-            content: `
-                <h3>The Challenge</h3>
-                <p>Legacy architecture (Oracle + PostgreSQL) was struggling with data freshness and volume. Queries were taking up to 15 minutes to process.</p>
-                <h3>Solution</h3>
-                <p>Migrated to <strong>Oracle Cloud Infrastructure (OCI)</strong> using PySpark and Airflow. Implemented a Medallion Architecture.</p>
-                <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                    <p><strong>Result:</strong> Processing time reduced from 15 minutes to <1 minute. (93% reduction).</p>
-                </div>
-            `
+            en: {
+                title: 'Cloud Data Lake Migration',
+                tag: '93% Latency Reduction',
+                content: `
+                    <h3>The Challenge</h3>
+                    <p>Legacy architecture was struggling with volume. Queries were taking up to 15 minutes.</p>
+                    <h3>Solution</h3>
+                    <p>Migrated to <strong>OCI</strong> using PySpark and Airflow. Implemented Medallion Architecture.</p>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Result:</strong> Processing reduced to <1 minute. (93% reduction).</p>
+                    </div>
+                `
+            },
+            pt: {
+                title: 'Migração para Cloud Data Lake',
+                tag: '93% Redução de Latência',
+                content: `
+                    <h3>O Desafio</h3>
+                    <p>Arquitetura legada sofrendo com volume de dados. Consultas demoravam até 15 minutos.</p>
+                    <h3>Solução</h3>
+                    <p>Migração para <strong>OCI</strong> usando PySpark e Airflow. Implementação de Arquitetura Medalhão.</p>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Resultado:</strong> Processamento reduzido para <1 minuto.</p>
+                    </div>
+                `
+            }
         },
         'incentive': {
-            title: 'National Incentive Program',
-            tag: 'USD 2.8M Managed',
-            content: `
-                <h3>Business Impact</h3>
-                <p>Managed a "pay-by-performance" program for 400+ franchises, distributing approximately R$14M (USD 2.8M) annually based on operational excellence.</p>
-                <h3>Technical Implementation</h3>
-                <p>Automated the entire auditing and calculation process using SQL pipelines and Python scripts, ensuring transparency and 100% auditing accuracy.</p>
-            `
+            en: {
+                title: 'National Incentive Program',
+                tag: 'USD 2.8M Managed',
+                content: `
+                    <h3>Business Impact</h3>
+                    <p>Managed a performance program for 400+ franchises, distributing R$14M (USD 2.8M) annually.</p>
+                    <h3>Technical Implementation</h3>
+                    <p>Automated the entire calculation process using SQL pipelines and Python.</p>
+                `
+            },
+            pt: {
+                title: 'Programa Nacional de Incentivos',
+                tag: 'R$ 14M Gerenciados',
+                content: `
+                    <h3>Impacto de Negócio</h3>
+                    <p>Gerenciamento de programa de performance para 400+ franquias, distribuindo R$14M anualmente.</p>
+                    <h3>Implementação Técnica</h3>
+                    <p>Automação total do processo de cálculo usando pipelines SQL e Python.</p>
+                `
+            }
         },
         'public-health': {
-            title: 'Public Health Analysis',
-            tag: 'Big Data / Docker',
-            content: `
-                <h3>Analysis Overview</h3>
-                <p>Exploratory data analysis of the 2024 BRFSS dataset, analyzing over 458,000 records to identify trends in health equity and chronic disease burden.</p>
-                <h3>Stack</h3>
-                <p>Deployment of <strong>Apache Superset</strong> via Docker containers, allowing for rapid visualization and collaborative data exploration.</p>
-            `
+            en: {
+                title: 'Public Health Analysis',
+                tag: 'Big Data / Docker',
+                content: `
+                    <h3>Analysis Overview</h3>
+                    <p>EDA of the 2024 BRFSS dataset, analyzing 458,000+ records to identify health trends.</p>
+                    <h3>Stack</h3>
+                    <p>Deployment of <strong>Apache Superset</strong> via Docker for rapid collaborative visualization.</p>
+                `
+            },
+            pt: {
+                title: 'Análise de Saúde Pública',
+                tag: 'Big Data / Docker',
+                content: `
+                    <h3>Visão Geral</h3>
+                    <p>Análise exploratória do dataset BRFSS 2024, analisando mais de 458 mil registros de saúde.</p>
+                    <h3>Tecnologias</h3>
+                    <p>Deploy do <strong>Apache Superset</strong> via Docker para visualização rápida e colaborativa.</p>
+                `
+            }
         }
     };
 
@@ -96,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const projectId = card.getAttribute('data-project');
-            const data = projectData[projectId];
+            const data = projectData[projectId][currentLang];
             if (data) {
                 modalBody.innerHTML = `
                     <span class="project-tag">${data.tag}</span>
@@ -105,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${data.content}
                 `;
                 modalOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Stop background scroll
+                document.body.style.overflow = 'hidden';
             }
         });
     });
@@ -120,10 +364,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modalOverlay) closeModal();
     });
 
-    // --- Header & Navigation Logic ---
+    // --- Language Toggle Event ---
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            setLanguage(btn.getAttribute('data-lang'));
+        });
+    });
+
+    // Init Language
+    setLanguage(currentLang);
+
+    // --- Header & Scroll Logic ---
     const header = document.getElementById('header');
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.lang-btn)'); // Exclude lang buttons
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -132,7 +386,6 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header-blur');
         }
 
-        // Active Link Highlighting
         let currentSection = "";
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -149,14 +402,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth Scroll specifically for deep links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            if (link.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
