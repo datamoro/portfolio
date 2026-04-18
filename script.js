@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
             'proj-3-tag': 'USD 2.8M Managed',
             'proj-3-title': 'National Incentive Program',
             'proj-3-desc': 'Automated calculation for 400+ franchises using SQL and Python.',
-            'proj-4-tag': '458k+ Records',
-            'proj-4-title': 'Public Health Analysis',
             'proj-4-desc': 'Exploratory analysis of BRFSS dataset using PostgreSQL, Apache Superset and Docker.',
+            'proj-5-tag': 'Kafka / FHIR / TimescaleDB',
+            'proj-5-title': 'FHIR Telemetry Architecture',
+            'proj-5-desc': 'Distributed Open Source infrastructure for real-time biometric ingestion and normalization.',
             'experience-title': 'Professional Journey',
-            'exp-1-title': 'Senior Data Engineer',
+            'exp-1-title': 'Data Engineer',
             'exp-1-focus': 'Modernizing Legacy Infrastructure & Latency Reduction',
             'exp-1-bullets': `
                 <li><strong>The Challenge:</strong> Legacy Oracle systems couldn't scale with real-time business needs.</li>
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-bio': 'Conecto complexidade técnica à clareza de negócios com mais de 7 anos de experiência sênior. Especialista em <strong>Azure/OCI</strong>, <strong>PySpark</strong>, <strong>PostgreSQL</strong> e <strong>Airflow</strong>.',
             'btn-work': 'Ver Projetos',
             'btn-resume': 'Baixar Currículo',
-            'btn-connect': 'Vamos Conversar',
+            'btn-connect': 'Contato',
             'projects-title': 'Projetos Desenvolvidos',
             'proj-1-tag': 'Modern Data Stack',
             'proj-1-title': 'OpsFlow Analytics',
@@ -96,13 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'proj-2-title': 'Migração para Cloud Data Lake',
             'proj-2-desc': 'Migração de sistemas legados (Oracle/PostgreSQL) para OCI.',
             'proj-3-tag': 'R$ 14M Gerenciados',
-            'proj-3-title': 'Programa Nacional de Incentivos',
-            'proj-3-desc': 'Cálculos automatizados para 400+ franquias usando SQL e Python.',
-            'proj-4-tag': '458k+ Beneficiários',
-            'proj-4-title': 'Análise de Saúde Pública',
-            'proj-4-desc': 'Análise exploratória do dataset BRFSS usando PostgreSQL e Superset.',
+            'proj-3-title': 'Programa de Bônus Nacional',
+            'proj-3-desc': 'Criação de sistema de apuração de bônus para 400+ franquias.',
+            'proj-4-desc': 'Análise exploratória de dados de saúde pública dos EUA (2024).',
+            'proj-5-tag': 'TCC / Interoperabilidade',
+            'proj-5-title': 'Arquitetura de Telemetria FHIR',
+            'proj-5-desc': 'Infraestrutura distribuída para captação e normalização de biometrias em padrão clínico mundial FHIR.',
             'experience-title': 'Jornada Profissional',
-            'exp-1-title': 'Engenheiro de Dados Sênior',
+            'exp-1-title': 'Engenheiro de Dados',
             'exp-1-focus': 'Modernização de Infraestrutura Legada e Redução de Latência',
             'exp-1-bullets': `
                 <li><strong>O Desafio:</strong> Sistemas Oracle legados não escalavam com as necessidades de tempo real.</li>
@@ -206,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function type() {
         const words = translations[currentLang]['typewriter'];
         const currentWord = words[wordIndex];
-        
+
         if (isDeleting) {
             typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
@@ -304,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>Impacto de Negócio</h3>
                     <p>Gerenciamento de programa de performance para 400+ franquias, distribuindo R$14M anualmente.</p>
                     <h3>Implementação Técnica</h3>
-                    <p>Automação total do processo de cálculo usando pipelines SQL e Python.</p>
+                    <p>Automação total do processo de cálculo, desde a mensuração dos indicadores até a distribuição dos bônus, usando pipelines SQL e Python.</p>
                 `
             }
         },
@@ -324,9 +326,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 tag: 'Big Data / Docker',
                 content: `
                     <h3>Visão Geral</h3>
-                    <p>Análise exploratória do dataset BRFSS 2024, analisando mais de 458 mil registros de saúde.</p>
+                    <p>Análise exploratória (EDA) do maior sistema de monitoramento de saúde do mundo, o BRFSS 2024 (conduzido pelo CDC nos EUA). O projeto processa mais de 458 mil registros, transformando dados complexos de comportamento e fatores de risco em insights visíveis para gestão de saúde pública.</p>
                     <h3>Tecnologias</h3>
                     <p>Deploy do <strong>Apache Superset</strong> via Docker para visualização rápida e colaborativa.</p>
+                `
+            }
+        },
+        'tcc-fhir': {
+            en: {
+                title: 'FHIR Telemetry Architecture',
+                tag: 'Kafka / FHIR / TimescaleDB',
+                content: `
+                    <h3>Capstone Overview</h3>
+                    <p>Open-source distributed architecture designed to scale the capture, ingestion, and universal translation of patient biometrics into <strong>HL7 FHIR</strong> standards.</p>
+                    <h3>Technical Mesh</h3>
+                    <ul>
+                        <li><strong>Ingestion:</strong> Python-based producers emulating real-time sensors via Kafka.</li>
+                        <li><strong>Workflow:</strong> FHIR Workers (Python/Pydantic) performing LOINC-restricted transformations.</li>
+                        <li><strong>Storage:</strong> TimescaleDB (PostgreSQL) for high-frequency clinical time-series.</li>
+                        <li><strong>Security:</strong> SMART on FHIR compliance using OAuth2/JWT at the API Gateway.</li>
+                    </ul>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Performance:</strong> Validated with high-throughput tests (>22k async req/s) ensuring architectural resilience.</p>
+                    </div>
+                `
+            },
+            pt: {
+                title: 'Arquitetura de Telemetria FHIR',
+                tag: 'TCC / Interoperabilidade HL7',
+                content: `
+                    <h3>Visão Geral do TCC</h3>
+                    <p>Arquitetura distribuída Open Source desenhada para escalonar a captação, ingestão e tradução universal de biometrias vestíveis para o padrão clínico mundial <strong>HL7 FHIR</strong>.</p>
+                    <h3>Malha Técnica</h3>
+                    <ul>
+                        <li><strong>Ingestão:</strong> Producers em Python emulando sensores em tempo real via Apache Kafka.</li>
+                        <li><strong>Workflow:</strong> FHIR Workers realizando transformações estruturais com Pydantic e fhir.resources.</li>
+                        <li><strong>Armazenamento:</strong> TimescaleDB para ingestão de séries temporais clínicas em milissegundos.</li>
+                        <li><strong>Segurança:</strong> Conformidade SMART on FHIR com bloqueio lógico OAuth2/JWT no Gateway.</li>
+                    </ul>
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Engenharia:</strong> Projeto estrutural atrelado aos pilares das normas acadêmicas da ESALQ/USP, validado com throughput superior a 22k req. assíncronas.</p>
+                    </div>
                 `
             }
         }
