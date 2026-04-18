@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'skill-4-title': 'Plataformas de Nuvem',
             'skill-4-desc': 'Especialista em migrações <strong>Azure</strong> e <strong>OCI</strong>. Experiência em <strong>Snowflake</strong>, <strong>Databricks</strong> e <strong>AWS Glue/EMR</strong>.',
             'skill-5-title': 'Inovação e IA Generativa',
-            'skill-5-desc': 'Desenvolvendo <strong>MVPs de Agentes</strong> e testando <strong>LLMs</strong> de fronteira. Liderando a adoção de IA para fomentar inovação tecnológica.',
+            'skill-5-desc': 'Desenvolvendo <strong>MVPs de Agentes</strong> e testando modelos de <strong>LLM</strong> para utilização em projetos governados pelo departamento de TI. Liderando a adoção de IA para fomentar inovação tecnológica.',
             'contact-title': 'Vamos nos Conectar',
             'contact-label-linkedin': 'LinkedIn',
             'contact-label-github': 'GitHub',
