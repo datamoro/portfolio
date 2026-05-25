@@ -235,16 +235,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Modal Logic ---
     const projectData = {
         'opsflow': {
+            github: 'https://github.com/datamoro/opsflow-analytics',
             en: {
                 title: 'OpsFlow Analytics',
                 tag: 'Modern Data Stack',
                 content: `
                     <h3>Context & Motivation</h3>
-                    <p>Accurate demand forecasting is the backbone of efficient logistics. This project transforms operational data into actionable forecasting insights.</p>
-                    <h3>Architecture</h3>
-                    <p>Built with <strong>Google BigQuery</strong> and <strong>dbt</strong>, leveraging a Medallion Architecture layer model.</p>
+                    <p>Accurate demand forecasting is the backbone of efficient logistics. This project migrates a legacy forecasting engine into a modern ELT architecture, turning raw operational data into reliable, actionable insights.</p>
+                    <h3>Architecture (Medallion)</h3>
+                    <p>Built with <strong>Google BigQuery</strong> and <strong>dbt</strong>, following a 3-layer Medallion model:</p>
+                    <ul>
+                        <li><strong>Staging:</strong> Base tables sourced from BigQuery (<code>stg_im_global_collect_rate</code>, <code>stg_im_arrival_scan</code>)</li>
+                        <li><strong>Intermediate:</strong> Business logic — daily volume & DoD growth, pickup/receipt distributions (D2D/W2D), CDC production ratios</li>
+                        <li><strong>Mart:</strong> <code>mart_natural_growth_daily</code> — final consumption table for downstream BI tools</li>
+                    </ul>
                     <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                        <p><strong>Impact:</strong> Migrated legacy engine to ELT, improving maintainability.</p>
+                        <p><strong>Stack:</strong> BigQuery · dbt · Metabase · Medallion Architecture</p>
+                        <p style="margin-bottom:0"><strong>Impact:</strong> Replaced a fragile legacy engine with a documented, tested ELT pipeline — reducing maintenance overhead and enabling self-service forecasting for the operations team.</p>
                     </div>
                 `
             },
@@ -253,11 +260,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 tag: 'Modern Data Stack',
                 content: `
                     <h3>Contexto e Motivação</h3>
-                    <p>Previsão de demanda precisa é a base da eficiência logística. Este projeto transforma dados operacionais em insights acionáveis.</p>
-                    <h3>Arquitetura</h3>
-                    <p>Construído com <strong>BigQuery</strong> e <strong>dbt</strong>, utilizando o modelo de Arquitetura Medalhão.</p>
+                    <p>Previsão de demanda precisa é a base da eficiência logística. Este projeto migra um motor de previsão legado para uma arquitetura ELT moderna, transformando dados operacionais brutos em insights confiáveis e acionáveis.</p>
+                    <h3>Arquitetura (Medalhão)</h3>
+                    <p>Construído com <strong>Google BigQuery</strong> e <strong>dbt</strong>, seguindo o modelo Medalhão de 3 camadas:</p>
+                    <ul>
+                        <li><strong>Staging:</strong> Tabelas base vindas do BigQuery (<code>stg_im_global_collect_rate</code>, <code>stg_im_arrival_scan</code>)</li>
+                        <li><strong>Intermediate:</strong> Lógica de negócio — volume diário & crescimento DoD, distribuições de coleta/recebimento (D2D/W2D), ratios CDC</li>
+                        <li><strong>Mart:</strong> <code>mart_natural_growth_daily</code> — tabela final de consumo para ferramentas de BI</li>
+                    </ul>
                     <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                        <p><strong>Impacto:</strong> Migração de motor legado para ELT, melhorando manutenibilidade.</p>
+                        <p><strong>Stack:</strong> BigQuery · dbt · Metabase · Arquitetura Medalhão</p>
+                        <p style="margin-bottom:0"><strong>Impacto:</strong> Substituição de um motor legado frágil por um pipeline ELT documentado e testado — reduzindo overhead de manutenção e habilitando previsão self-service para o time de operações.</p>
                     </div>
                 `
             }
@@ -313,14 +326,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
         'public-health': {
+            github: 'https://github.com/datamoro/bhrss-exploratory-analysis',
             en: {
                 title: 'Public Health Analysis',
                 tag: 'Big Data / Docker',
                 content: `
-                    <h3>Analysis Overview</h3>
-                    <p>EDA of the 2024 BRFSS dataset, analyzing 458,000+ records to identify health trends.</p>
-                    <h3>Stack</h3>
-                    <p>Deployment of <strong>Apache Superset</strong> via Docker for rapid collaborative visualization.</p>
+                    <h3>Overview</h3>
+                    <p>End-to-end data engineering pipeline that extracts, transforms, and loads U.S. public health survey data (<strong>BRFSS 2024</strong>) into PostgreSQL, with interactive dashboards powered by Apache Superset — all running in Docker. The dataset covers <strong>457,670 records</strong> from the CDC's largest continuously conducted health survey.</p>
+                    <h3>The Data Story</h3>
+                    <p><em>"Social Determinants of Health and Quality of Life in the USA"</em> — analyzing how socioeconomic factors (income, education) drive chronic disease outcomes and healthcare access disparities.</p>
+                    <img src="images/ph_access.png" alt="Healthcare access dashboard" class="modal-project-img">
+                    <img src="images/ph_chronic_1.png" alt="Chronic disease analysis dashboard" class="modal-project-img">
+                    <img src="images/ph_chronic_2.png" alt="Chronic disease breakdown dashboard" class="modal-project-img">
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Stack:</strong> Python · PostgreSQL 15 · Apache Superset · Docker Compose</p>
+                        <p style="margin-bottom:0"><strong>Scope:</strong> ASCII fixed-width ETL → structured relational model → BI dashboards with health equity analysis across demographic groups.</p>
+                    </div>
                 `
             },
             pt: {
@@ -328,13 +349,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 tag: 'Big Data / Docker',
                 content: `
                     <h3>Visão Geral</h3>
-                    <p>Análise exploratória (EDA) do maior sistema de monitoramento de saúde do mundo, o BRFSS 2024 (conduzido pelo CDC nos EUA). O projeto processa mais de 458 mil registros, transformando dados complexos de comportamento e fatores de risco em insights visíveis para gestão de saúde pública.</p>
-                    <h3>Tecnologias</h3>
-                    <p>Deploy do <strong>Apache Superset</strong> via Docker para visualização rápida e colaborativa.</p>
+                    <p>Pipeline end-to-end que extrai, transforma e carrega dados do maior sistema de monitoramento de saúde do mundo — o <strong>BRFSS 2024</strong> (CDC/EUA) — em PostgreSQL, com dashboards interativos via Apache Superset rodando em Docker. São <strong>457.670 registros</strong> processados de survey no formato ASCII fixed-width.</p>
+                    <h3>A História dos Dados</h3>
+                    <p><em>"Determinantes Sociais de Saúde e Qualidade de Vida nos EUA"</em> — como fatores socioeconômicos (renda, educação) impactam doenças crônicas e acesso à saúde.</p>
+                    <img src="images/ph_access.png" alt="Dashboard de acesso à saúde" class="modal-project-img">
+                    <img src="images/ph_chronic_1.png" alt="Dashboard de doenças crônicas" class="modal-project-img">
+                    <img src="images/ph_chronic_2.png" alt="Breakdown de doenças crônicas" class="modal-project-img">
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Stack:</strong> Python · PostgreSQL 15 · Apache Superset · Docker Compose</p>
+                        <p style="margin-bottom:0"><strong>Escopo:</strong> ETL de arquivo ASCII fixed-width → modelo relacional estruturado → dashboards BI com análise de equidade em saúde por grupos demográficos.</p>
+                    </div>
                 `
             }
         },
         'tcc-fhir': {
+            github: 'https://github.com/datamoro/tcc-hah-fhir-architecture',
             en: {
                 title: 'FHIR Telemetry Architecture',
                 tag: 'Kafka / FHIR / TimescaleDB',
@@ -387,6 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.innerHTML = `
                     <span class="project-tag">${data.tag}</span>
                     <h2 style="margin-top: 10px;">${data.title}</h2>
+                    ${data.github ? `<a href="${data.github}" target="_blank" rel="noopener noreferrer" class="modal-github-btn"><ion-icon name="logo-github"></ion-icon> View on GitHub</a>` : ''}
                     <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #eee;">
                     ${data.content}
                 `;

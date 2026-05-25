@@ -594,6 +594,38 @@ nav {
     color: var(--accent-blue);
 }
 
+.modal-github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: var(--text-primary);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-github-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.modal-github-btn ion-icon {
+    font-size: 1rem;
+}
+
+.modal-project-img {
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+    box-shadow: var(--card-shadow);
+}
+
 .modal-content p {
     margin-bottom: 1.25rem;
 }
