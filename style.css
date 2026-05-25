@@ -601,14 +601,96 @@ nav {
     margin-bottom: 0.75rem;
 }
 
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.hamburger:hover {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links, .profile-pic-container {
-        display: none;
+    .hamburger {
+        display: flex;
     }
 
     .nav-wrapper {
         margin-left: auto;
+    }
+
+    /* Mobile nav dropdown */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        padding: 0.5rem 0 1rem;
+        list-style: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.85rem 2rem;
+        font-size: 1rem;
+        border-radius: 0;
+    }
+
+    .nav-links a:hover {
+        background: rgba(59, 130, 246, 0.06);
     }
 
     .lang-switcher {
@@ -625,12 +707,32 @@ nav {
         font-size: 3rem;
     }
 
+    /* Hero: stack vertically, show photo smaller below text */
+    .hero-grid {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
     .hero-content {
         max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-pic {
+        width: 180px;
+        height: 180px;
     }
 
     .hero-actions {
         flex-direction: column;
+        align-items: center;
     }
 
     .modal-content {

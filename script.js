@@ -446,11 +446,42 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             if (link.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
+                closeMobileMenu();
                 const targetId = link.getAttribute('href');
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
             }
         });
+    });
+
+    // --- Hamburger / Mobile Menu ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinksEl = document.getElementById('nav-links');
+
+    function closeMobileMenu() {
+        hamburger.classList.remove('open');
+        navLinksEl.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+        const isOpen = navLinksEl.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navLinksEl.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileMenu();
     });
 });
