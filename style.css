@@ -221,14 +221,16 @@ nav {
 }
 
 .btn-outline {
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--text-primary);
     color: var(--text-primary);
+    background: transparent;
 }
 
 .btn-outline:hover {
-    background-color: white;
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
+    background-color: var(--text-primary);
+    border-color: var(--text-primary);
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Hero Elements */
