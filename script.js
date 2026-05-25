@@ -411,17 +411,24 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const projectId = card.getAttribute('data-project');
-            const data = projectData[projectId][currentLang];
+            const project = projectData[projectId];
+            const data = project[currentLang];
             if (data) {
+                const githubUrl = project.github;
                 modalBody.innerHTML = `
                     <span class="project-tag">${data.tag}</span>
                     <h2 style="margin-top: 10px;">${data.title}</h2>
-                    ${data.github ? `<a href="${data.github}" target="_blank" rel="noopener noreferrer" class="modal-github-btn"><ion-icon name="logo-github"></ion-icon> View on GitHub</a>` : ''}
+                    ${githubUrl ? `<a href="${githubUrl}" target="_blank" rel="noopener noreferrer" class="modal-github-btn"><ion-icon name="logo-github"></ion-icon> View on GitHub</a>` : ''}
                     <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #eee;">
                     ${data.content}
                 `;
                 modalOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
+
+                // Bind lightbox to project images
+                modalBody.querySelectorAll('.modal-project-img').forEach(img => {
+                    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+                });
             }
         });
     });
@@ -430,6 +437,33 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
+
+    // --- Lightbox for project images ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeLightbox();
+            closeMobileMenu();
+        }
+    });
 
     modalClose.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
