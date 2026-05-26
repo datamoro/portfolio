@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" font-family="Raleway, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="500" fill="#f8fafc" rx="12"/>
+
+  <!-- ─────────────── SOURCES (left) ─────────────── -->
+  <rect x="12" y="12" width="148" height="476" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="86" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1">SOURCES</text>
+
+  <!-- Source items -->
+  <!-- Legacy ERP -->
+  <rect x="24" y="50" width="124" height="52" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="86" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2937">Legacy ERP</text>
+  <text x="86" y="84" text-anchor="middle" font-size="9" fill="#6b7280">SQL Server</text>
+  <text x="86" y="97" text-anchor="middle" font-size="9" fill="#6b7280">Oracle Protheus</text>
+
+  <!-- Operational DW -->
+  <rect x="24" y="114" width="124" height="42" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="86" y="133" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2937">Legacy DW</text>
+  <text x="86" y="149" text-anchor="middle" font-size="9" fill="#6b7280">Oracle ADW</text>
+
+  <!-- CRM -->
+  <rect x="24" y="168" width="124" height="42" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="86" y="187" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2937">CRM</text>
+  <text x="86" y="203" text-anchor="middle" font-size="9" fill="#6b7280">Salesforce</text>
+
+  <!-- Operational Systems -->
+  <rect x="24" y="222" width="124" height="52" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="86" y="241" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2937">Operational</text>
+  <text x="86" y="255" text-anchor="middle" font-size="9" fill="#6b7280">CX · Finance</text>
+  <text x="86" y="268" text-anchor="middle" font-size="9" fill="#6b7280">Logistics · ERP</text>
+
+  <!-- Unstructured -->
+  <rect x="24" y="286" width="124" height="52" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="86" y="305" text-anchor="middle" font-size="10" font-weight="700" fill="#1f2937">Unstructured</text>
+  <text x="86" y="319" text-anchor="middle" font-size="9" fill="#6b7280">Spreadsheets</text>
+  <text x="86" y="332" text-anchor="middle" font-size="9" fill="#6b7280">Images · Audio</text>
+
+  <!-- Arrows sources → kafka -->
+  <line x1="148" y1="76" x2="198" y2="180" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arrow-gray)" stroke-dasharray="4,3"/>
+  <line x1="148" y1="135" x2="198" y2="185" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arrow-gray)" stroke-dasharray="4,3"/>
+  <line x1="148" y1="189" x2="198" y2="190" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arrow-gray)" stroke-dasharray="4,3"/>
+  <line x1="148" y1="248" x2="198" y2="195" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arrow-gray)" stroke-dasharray="4,3"/>
+  <line x1="148" y1="312" x2="198" y2="200" stroke="#9ca3af" stroke-width="1.2" marker-end="url(#arrow-gray)" stroke-dasharray="4,3"/>
+
+  <!-- ─────────────── KAFKA (ingestion) ─────────────── -->
+  <rect x="168" y="155" width="80" height="70" rx="8" fill="#18181b" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="208" y="183" text-anchor="middle" font-size="11" font-weight="800" fill="white">Apache</text>
+  <text x="208" y="198" text-anchor="middle" font-size="11" font-weight="800" fill="#3b82f6">Kafka</text>
+  <text x="208" y="216" text-anchor="middle" font-size="8.5" fill="#9ca3af">Event Streaming</text>
+
+  <!-- Arrow Kafka → OCI box -->
+  <line x1="248" y1="190" x2="275" y2="190" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ─────────────── OCI MAIN BOX ─────────────── -->
+  <rect x="270" y="12" width="556" height="400" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="548" y="34" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af" letter-spacing="0.5">OCI DATA LAKE — ORACLE CLOUD</text>
+
+  <!-- Spark label inside -->
+  <text x="298" y="56" font-size="10" font-weight="700" fill="#3b82f6">⚡ Apache Spark (PySpark)</text>
+
+  <!-- ── Object Storage inner box ── -->
+  <rect x="282" y="62" width="532" height="178" rx="8" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="298" y="79" font-size="9.5" font-weight="700" fill="#6b7280" letter-spacing="0.8">ORACLE OBJECT STORAGE</text>
+
+  <!-- Medallion layers -->
+  <!-- RAW -->
+  <rect x="295" y="88" width="105" height="58" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="347" y="110" text-anchor="middle" font-size="13" font-weight="800" fill="#64748b">RAW</text>
+  <text x="347" y="126" text-anchor="middle" font-size="8.5" fill="#94a3b8">As-is ingestion</text>
+  <text x="347" y="139" text-anchor="middle" font-size="8.5" fill="#94a3b8">No transformation</text>
+
+  <!-- Arrow RAW → BRONZE -->
+  <line x1="400" y1="117" x2="418" y2="117" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- BRONZE -->
+  <rect x="420" y="88" width="105" height="58" rx="7" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="472" y="110" text-anchor="middle" font-size="13" font-weight="800" fill="#d97706">BRONZE</text>
+  <text x="472" y="126" text-anchor="middle" font-size="8.5" fill="#b45309">Cleaned</text>
+  <text x="472" y="139" text-anchor="middle" font-size="8.5" fill="#b45309">Validated</text>
+
+  <!-- Arrow BRONZE → SILVER -->
+  <line x1="525" y1="117" x2="543" y2="117" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- SILVER -->
+  <rect x="545" y="88" width="105" height="58" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="597" y="110" text-anchor="middle" font-size="13" font-weight="800" fill="#475569">SILVER</text>
+  <text x="597" y="126" text-anchor="middle" font-size="8.5" fill="#64748b">Enriched</text>
+  <text x="597" y="139" text-anchor="middle" font-size="8.5" fill="#64748b">Conformed</text>
+
+  <!-- Arrow SILVER → GOLD -->
+  <line x1="650" y1="117" x2="668" y2="117" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- GOLD -->
+  <rect x="670" y="88" width="105" height="58" rx="7" fill="#fefce8" stroke="#eab308" stroke-width="1.5"/>
+  <text x="722" y="110" text-anchor="middle" font-size="13" font-weight="800" fill="#ca8a04">GOLD</text>
+  <text x="722" y="126" text-anchor="middle" font-size="8.5" fill="#a16207">Aggregated</text>
+  <text x="722" y="139" text-anchor="middle" font-size="8.5" fill="#a16207">BI-ready</text>
+
+  <!-- dbt label -->
+  <rect x="295" y="158" width="480" height="22" rx="4" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="535" y="173" text-anchor="middle" font-size="9.5" font-weight="700" fill="#16a34a">⚙ dbt — governed SQL transformations with full lineage across all layers</text>
+
+  <!-- ── Orchestration box ── -->
+  <rect x="282" y="255" width="255" height="72" rx="8" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="304" y="273" font-size="9" font-weight="700" fill="#6b7280" letter-spacing="0.8">ORCHESTRATION</text>
+  <rect x="295" y="280" width="228" height="36" rx="5" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+  <text x="409" y="302" text-anchor="middle" font-size="12" font-weight="800" fill="#0284c7">Apache Airflow</text>
+  <text x="409" y="315" text-anchor="middle" font-size="8.5" fill="#0369a1">Code-first · Git-versioned · Tested pipelines</text>
+
+  <!-- ── Observability box ── -->
+  <rect x="550" y="255" width="264" height="72" rx="8" fill="white" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="572" y="273" font-size="9" font-weight="700" fill="#6b7280" letter-spacing="0.8">OBSERVABILITY</text>
+  <rect x="563" y="280" width="238" height="36" rx="5" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+  <text x="682" y="302" text-anchor="middle" font-size="12" font-weight="800" fill="#ea580c">Datadog</text>
+  <text x="682" y="315" text-anchor="middle" font-size="8.5" fill="#c2410c">Pipeline monitoring · Alerting · SLA tracking</text>
+
+  <!-- ── Governance label ── -->
+  <rect x="282" y="340" width="532" height="58" rx="8" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1.5"/>
+  <text x="548" y="358" text-anchor="middle" font-size="9" font-weight="700" fill="#7e22ce" letter-spacing="0.8">GOVERNANCE</text>
+  <text x="548" y="376" text-anchor="middle" font-size="9.5" fill="#6b21a8">Access Control  ·  Data Catalog  ·  Lineage Tracking  ·  Data Quality Monitoring  ·  Automated Tests</text>
+  <text x="548" y="392" text-anchor="middle" font-size="9" fill="#9333ea">Open-source bias — Cloud-agnostic design (portable to Azure / AWS)</text>
+
+  <!-- Arrow OCI → Consumption -->
+  <line x1="826" y1="190" x2="854" y2="190" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ─────────────── CONSUMPTION (right) ─────────────── -->
+  <rect x="854" y="12" width="94" height="400" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
+  <text x="901" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#6b7280" letter-spacing="1">OUTPUT</text>
+
+  <!-- Oracle ADW -->
+  <rect x="864" y="50" width="74" height="42" rx="7" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="901" y="69" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1d4ed8">Oracle</text>
+  <text x="901" y="83" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1d4ed8">ADW</text>
+
+  <!-- Power BI -->
+  <rect x="864" y="104" width="74" height="42" rx="7" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="901" y="123" text-anchor="middle" font-size="9.5" font-weight="700" fill="#b45309">Power BI</text>
+  <text x="901" y="137" text-anchor="middle" font-size="8.5" fill="#92400e">Dashboards</text>
+
+  <!-- Superset -->
+  <rect x="864" y="158" width="74" height="42" rx="7" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+  <text x="901" y="177" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d">Apache</text>
+  <text x="901" y="191" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d">Superset</text>
+
+  <!-- Prometheus / Grafana -->
+  <rect x="864" y="212" width="74" height="42" rx="7" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>
+  <text x="901" y="231" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c">Prometheus</text>
+  <text x="901" y="245" text-anchor="middle" font-size="9" fill="#9a3412">Grafana</text>
+
+  <!-- ─────────────── IMPACT bar ─────────────── -->
+  <rect x="12" y="422" width="936" height="66" rx="10" fill="#1e3a5f" stroke="none"/>
+  <text x="480" y="448" text-anchor="middle" font-size="11" font-weight="800" fill="white" letter-spacing="2">OUTCOME</text>
+  <text x="220" y="470" text-anchor="middle" font-size="13" font-weight="800" fill="#60a5fa">93%</text>
+  <text x="220" y="483" text-anchor="middle" font-size="9" fill="#93c5fd">Latency Reduction</text>
+  <text x="480" y="470" text-anchor="middle" font-size="13" font-weight="800" fill="#34d399">Near Real-Time</text>
+  <text x="480" y="483" text-anchor="middle" font-size="9" fill="#6ee7b7">Board-level operational decisions</text>
+  <text x="740" y="470" text-anchor="middle" font-size="13" font-weight="800" fill="#a78bfa">AI-Ready</text>
+  <text x="740" y="483" text-anchor="middle" font-size="9" fill="#c4b5fd">Foundation for ML / LLM workloads</text>
+
+</svg>

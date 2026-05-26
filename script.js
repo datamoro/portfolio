@@ -287,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Oracle ODI → Oracle ADW → Oracle Object Storage — a closed, monolithic architecture with no orchestration layer, no observability, and no path to AI readiness.</p>
 
                     <h3>The New Architecture</h3>
+                    <img src="images/migration-architecture.svg" alt="Cloud Data Lake Migration Architecture Diagram" class="modal-project-img">
                     <p>Designed and led the migration to a modern <strong>OCI Data Lake</strong> using <strong>Medallion Architecture</strong> (Raw → Bronze → Silver → Gold), with independent, scalable components:</p>
                     <ul>
                         <li><strong>Ingestion:</strong> Multi-source pipeline covering legacy ERP, CRM (Salesforce), operational systems, spreadsheets, images and audio/video</li>
@@ -322,6 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Oracle ODI → Oracle ADW → Oracle Object Storage — arquitetura fechada e monolítica, sem camada de orquestração, sem observabilidade e sem caminho para IA.</p>
 
                     <h3>A Nova Arquitetura</h3>
+                    <img src="images/migration-architecture.svg" alt="Diagrama da Arquitetura Cloud Data Lake Migration" class="modal-project-img">
                     <p>Projetei e liderei a migração para um <strong>OCI Data Lake</strong> moderno usando <strong>Arquitetura Medalhão</strong> (Raw → Bronze → Silver → Gold), com componentes independentes e escaláveis:</p>
                     <ul>
                         <li><strong>Ingestão:</strong> Pipeline multi-source cobrindo ERP legado, CRM (Salesforce), sistemas operacionais, planilhas, imagens e áudio/vídeo</li>
