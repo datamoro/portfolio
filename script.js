@@ -281,11 +281,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 tag: '93% Latency Reduction',
                 content: `
                     <h3>The Challenge</h3>
-                    <p>Legacy architecture was struggling with volume. Queries were taking up to 15 minutes.</p>
-                    <h3>Solution</h3>
-                    <p>Migrated to <strong>OCI</strong> using PySpark and Airflow. Implemented Medallion Architecture.</p>
+                    <p>A legacy architecture built around a single Oracle Data Warehouse had become a critical bottleneck. All ETL pipelines ran through <strong>Oracle ODI</strong>, queries took up to <strong>15 minutes</strong>, the DW was overloaded, and the system had no capacity for unstructured data or near real-time processing. Scaling meant buying more Oracle licenses — not a sustainable path.</p>
+
+                    <h3>Legacy Stack</h3>
+                    <p>Oracle ODI → Oracle ADW → Oracle Object Storage — a closed, monolithic architecture with no orchestration layer, no observability, and no path to AI readiness.</p>
+
+                    <h3>The New Architecture</h3>
+                    <p>Designed and led the migration to a modern <strong>OCI Data Lake</strong> using <strong>Medallion Architecture</strong> (Raw → Bronze → Silver → Gold), with independent, scalable components:</p>
+                    <ul>
+                        <li><strong>Ingestion:</strong> Multi-source pipeline covering legacy ERP, CRM (Salesforce), operational systems, spreadsheets, images and audio/video</li>
+                        <li><strong>Transformation:</strong> <strong>PySpark</strong> for distributed processing, <strong>dbt</strong> for governed SQL transformations with full lineage</li>
+                        <li><strong>Orchestration:</strong> <strong>Apache Airflow</strong> replacing ODI — code-first, testable, version-controlled pipelines</li>
+                        <li><strong>Observability:</strong> <strong>Datadog</strong> for pipeline monitoring, alerting and SLA tracking</li>
+                        <li><strong>Storage:</strong> OCI Object Storage + Oracle ADW as the consumption layer for BI tools</li>
+                    </ul>
+
+                    <h3>Design Principles</h3>
+                    <ul>
+                        <li><strong>Open-source bias:</strong> Reduce vendor lock-in, increase portability</li>
+                        <li><strong>Governance by default:</strong> Access control, source code management (Git), automated testing at every layer</li>
+                        <li><strong>AI-ready foundation:</strong> Data lake as the base for future ML/LLM workloads, including unstructured data</li>
+                        <li><strong>Cloud-agnostic design:</strong> Architecture portable to Azure or AWS with minimal rework</li>
+                    </ul>
+
                     <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                        <p><strong>Result:</strong> Processing reduced to <1 minute. (93% reduction).</p>
+                        <p><strong>Stack:</strong> OCI · Oracle ADW · PySpark · Apache Airflow · dbt · Datadog · Oracle Object Storage</p>
+                        <p><strong>Impact:</strong> Processing latency reduced by <strong>93%</strong> (15 min → under 1 min). Near real-time data enabled board-level operational decisions. DW fully offloaded. Platform now AI-ready with support for unstructured data.</p>
+                        <p style="margin-bottom:0"><em>* Internal enterprise project — architecture and outcomes shared without proprietary data.</em></p>
                     </div>
                 `
             },
@@ -294,11 +316,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 tag: '93% Redução de Latência',
                 content: `
                     <h3>O Desafio</h3>
-                    <p>Arquitetura legada sofrendo com volume de dados. Consultas demoravam até 15 minutos.</p>
-                    <h3>Solução</h3>
-                    <p>Migração para <strong>OCI</strong> usando PySpark e Airflow. Implementação de Arquitetura Medalhão.</p>
+                    <p>Uma arquitetura legada centralizada em um único Oracle Data Warehouse havia se tornado um gargalo crítico. Todos os pipelines ETL passavam pelo <strong>Oracle ODI</strong>, consultas levavam até <strong>15 minutos</strong>, o DW estava sobrecarregado e o sistema não suportava dados não estruturados nem processamento near real-time. Escalar significava comprar mais licenças Oracle — um caminho insustentável.</p>
+
+                    <h3>Stack Legada</h3>
+                    <p>Oracle ODI → Oracle ADW → Oracle Object Storage — arquitetura fechada e monolítica, sem camada de orquestração, sem observabilidade e sem caminho para IA.</p>
+
+                    <h3>A Nova Arquitetura</h3>
+                    <p>Projetei e liderei a migração para um <strong>OCI Data Lake</strong> moderno usando <strong>Arquitetura Medalhão</strong> (Raw → Bronze → Silver → Gold), com componentes independentes e escaláveis:</p>
+                    <ul>
+                        <li><strong>Ingestão:</strong> Pipeline multi-source cobrindo ERP legado, CRM (Salesforce), sistemas operacionais, planilhas, imagens e áudio/vídeo</li>
+                        <li><strong>Transformação:</strong> <strong>PySpark</strong> para processamento distribuído, <strong>dbt</strong> para transformações SQL governadas com linhagem completa</li>
+                        <li><strong>Orquestração:</strong> <strong>Apache Airflow</strong> substituindo ODI — pipelines code-first, testáveis e versionados no Git</li>
+                        <li><strong>Observabilidade:</strong> <strong>Datadog</strong> para monitoramento de pipelines, alertas e acompanhamento de SLAs</li>
+                        <li><strong>Armazenamento:</strong> OCI Object Storage + Oracle ADW como camada de consumo para ferramentas de BI</li>
+                    </ul>
+
+                    <h3>Princípios de Design</h3>
+                    <ul>
+                        <li><strong>Viés open-source:</strong> Reduzir vendor lock-in e aumentar portabilidade</li>
+                        <li><strong>Governança by default:</strong> Controle de acesso, versionamento (Git), testes automatizados em cada camada</li>
+                        <li><strong>Base para IA:</strong> Data lake como fundação para workloads de ML/LLM, incluindo dados não estruturados</li>
+                        <li><strong>Design cloud-agnostic:</strong> Arquitetura portável para Azure ou AWS com esforço mínimo</li>
+                    </ul>
+
                     <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
-                        <p><strong>Resultado:</strong> Processamento reduzido para <1 minuto.</p>
+                        <p><strong>Stack:</strong> OCI · Oracle ADW · PySpark · Apache Airflow · dbt · Datadog · Oracle Object Storage</p>
+                        <p><strong>Impacto:</strong> Latência de processamento reduzida em <strong>93%</strong> (15 min → menos de 1 min). Dados near real-time habilitaram decisões operacionais em nível de diretoria. DW completamente desafogado. Plataforma preparada para IA com suporte a dados não estruturados.</p>
+                        <p style="margin-bottom:0"><em>* Projeto corporativo interno — arquitetura e resultados compartilhados sem dados proprietários.</em></p>
                     </div>
                 `
             }
