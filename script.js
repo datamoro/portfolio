@@ -370,6 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content: `
                     <h3>Capstone Overview</h3>
                     <p>Open-source distributed architecture designed to scale the capture, ingestion, and universal translation of patient biometrics into <strong>HL7 FHIR</strong> standards.</p>
+                    <img src="images/fhir-architecture.png" alt="FHIR Telemetry Architecture Diagram" class="modal-project-img">
                     <h3>Technical Mesh</h3>
                     <ul>
                         <li><strong>Ingestion:</strong> Python-based producers emulating real-time sensors via Kafka.</li>
@@ -388,6 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content: `
                     <h3>Visão Geral do TCC</h3>
                     <p>Arquitetura distribuída Open Source desenhada para escalonar a captação, ingestão e tradução universal de biometrias vestíveis para o padrão clínico mundial <strong>HL7 FHIR</strong>.</p>
+                    <img src="images/fhir-architecture.png" alt="Diagrama da Arquitetura de Telemetria FHIR" class="modal-project-img">
                     <h3>Malha Técnica</h3>
                     <ul>
                         <li><strong>Ingestão:</strong> Producers em Python emulando sensores em tempo real via Apache Kafka.</li>
