@@ -354,20 +354,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: 'National Incentive Program',
                 tag: 'USD 2.8M Managed',
                 content: `
-                    <h3>Business Impact</h3>
-                    <p>Managed a performance program for 400+ franchises, distributing R$14M (USD 2.8M) annually.</p>
-                    <h3>Technical Implementation</h3>
-                    <p>Automated the entire calculation process using SQL pipelines and Python.</p>
+                    <h3>The Problem</h3>
+                    <p>A national Pay-by-Performance program covering <strong>400+ franchise units</strong> and distributing <strong>R$14M/year</strong> in bonuses was being managed entirely through manual Excel spreadsheets. Calculation errors, lack of audit trail, and zero transparency for franchise owners were critical risks at this financial scale.</p>
+
+                    <h3>The Solution</h3>
+                    <p>Designed and built a full-stack corporate platform from scratch using <strong>Clean Architecture</strong> — separating business rules from infrastructure from day one:</p>
+                    <ul>
+                        <li><strong>Backend (FastAPI):</strong> A <code>BonusEngine</code> and <code>ApuracaoEngine</code> encapsulate pure business logic — KPI thresholds, progressive bonus tiers, and multi-factor scoring — fully independent from the database or API layer</li>
+                        <li><strong>Frontend (Vue 3 + Vite + Pinia):</strong> Wizard-based calculation flow, analytical dashboard, KPI management UI, and a manual adjustment interface for the operations team</li>
+                        <li><strong>Database (Oracle ADW):</strong> 10+ source tables (deliveries, OTD, SLA, First/Last Mile, weekend scores, concentration) feeding a governed schema with configuration, audit, and results layers</li>
+                    </ul>
+
+                    <h3>Engineering Highlights</h3>
+                    <ul>
+                        <li><strong>Immutable audit trail:</strong> Snapshot system captures the state of every calculation. Final results are written to an immutable table (<code>PBP_RESULTADO_CALCULO</code>) — preventing any retroactive changes to distributed bonuses</li>
+                        <li><strong>Mass communication engine:</strong> Async SMTP dispatcher using Jinja2 HTML templates, with anti-spam delays, auto-reconnect every 100 sends, and a fallback email system for franchises with missing contact data</li>
+                        <li><strong>Full observability:</strong> Email audit log, calculation execution trace, and business rule version history via JSON snapshots in <code>PBP_CONFIG_LOG</code></li>
+                        <li><strong>Test suite:</strong> Unit tests for the bonus engine, E2E validation against reference spreadsheets, and integration tests against Oracle ADW</li>
+                    </ul>
+
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Stack:</strong> FastAPI · Vue 3 · Pinia · Oracle ADW · openpyxl · Jinja2 · JWT · Docker · Clean Architecture</p>
+                        <p><strong>Scale:</strong> 400+ franchise units · R$14M (USD 2.8M) distributed annually · >95% dashboard adoption</p>
+                        <p style="margin-bottom:0"><em>* Internal enterprise project — architecture shared without proprietary data.</em></p>
+                    </div>
                 `
             },
             pt: {
                 title: 'Programa Nacional de Incentivos',
                 tag: 'R$ 14M Gerenciados',
                 content: `
-                    <h3>Impacto de Negócio</h3>
-                    <p>Gerenciamento de programa de performance para 400+ franquias, distribuindo R$14M anualmente.</p>
-                    <h3>Implementação Técnica</h3>
-                    <p>Automação total do processo de cálculo, desde a mensuração dos indicadores até a distribuição dos bônus, usando pipelines SQL e Python.</p>
+                    <h3>O Problema</h3>
+                    <p>Um programa nacional de Pay-by-Performance cobrindo <strong>400+ unidades franqueadas</strong> e distribuindo <strong>R$14M/ano</strong> em bônus era gerenciado inteiramente em planilhas Excel manuais. Erros de cálculo, ausência de trilha de auditoria e zero transparência para os franqueados eram riscos críticos nessa escala financeira.</p>
+
+                    <h3>A Solução</h3>
+                    <p>Projetei e construí do zero uma plataforma corporativa full-stack usando <strong>Clean Architecture</strong> — separando regras de negócio da infraestrutura desde o primeiro dia:</p>
+                    <ul>
+                        <li><strong>Backend (FastAPI):</strong> <code>BonusEngine</code> e <code>ApuracaoEngine</code> encapsulam a lógica de negócio pura — thresholds de KPI, faixas progressivas de bônus e scoring multi-fator — completamente independentes do banco ou da camada de API</li>
+                        <li><strong>Frontend (Vue 3 + Vite + Pinia):</strong> Fluxo de cálculo em wizard, dashboard analítico, gestão de KPIs e interface de ajuste manual para o time de operações</li>
+                        <li><strong>Banco de Dados (Oracle ADW):</strong> 10+ tabelas fonte (entregas, OTD, SLA, First/Last Mile, score de fim de semana, concentração) alimentando um schema com camadas de configuração, auditoria e resultados</li>
+                    </ul>
+
+                    <h3>Destaques de Engenharia</h3>
+                    <ul>
+                        <li><strong>Trilha de auditoria imutável:</strong> Sistema de Snapshot captura o estado de cada cálculo. Resultados finais são gravados em tabela imutável (<code>PBP_RESULTADO_CALCULO</code>) — impedindo qualquer alteração retroativa nos bônus distribuídos</li>
+                        <li><strong>Motor de comunicação em massa:</strong> Dispatcher SMTP assíncrono com templates HTML via Jinja2, delays anti-spam, auto-reconnect a cada 100 envios e sistema de fallback para franquias sem e-mail cadastrado</li>
+                        <li><strong>Observabilidade completa:</strong> Log de auditoria de e-mails, rastreio de execução dos cálculos e histórico de versões das regras de negócio via snapshots JSON em <code>PBP_CONFIG_LOG</code></li>
+                        <li><strong>Suíte de testes:</strong> Testes unitários do motor de bônus, validação E2E contra planilhas de referência e testes de integração com Oracle ADW</li>
+                    </ul>
+
+                    <div style="margin: 20px 0; padding: 20px; background: #f9fafb; border-radius: 1rem; border: 1px solid #e5e7eb;">
+                        <p><strong>Stack:</strong> FastAPI · Vue 3 · Pinia · Oracle ADW · openpyxl · Jinja2 · JWT · Docker · Clean Architecture</p>
+                        <p><strong>Escala:</strong> 400+ unidades franqueadas · R$14M distribuídos anualmente · >95% de adoção</p>
+                        <p style="margin-bottom:0"><em>* Projeto corporativo interno — arquitetura compartilhada sem dados proprietários.</em></p>
+                    </div>
                 `
             }
         },
